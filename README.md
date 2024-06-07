@@ -12,8 +12,8 @@
 
 
 
-# topic name = UserID
-# message = {SenderID, ReceiverID, ChatID, MessageContent, TimeStamp}
+## topic name = UserID
+## message = {SenderID, ReceiverID, ChatID, MessageContent, TimeStamp}
 
 # Connect DB directly
 
