@@ -54,7 +54,7 @@ response = requests.get(url, Account)
 url = 'http://localhost:port/DB/Update_ChatAmount'
 response = requests.post(url, ChatID, NewChatAmount)
 
-## Create: Insert a new member to the chat
+# Create: Insert a new member to the chat
 ## ChatRelation is array of dictionary
 ChatRelation = {ChatID, UserID, UserAuthority(0)}
 url = 'http://localhost:port/DB/Add_Chat_Member'
