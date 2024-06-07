@@ -10,10 +10,10 @@
 根據需要可自由變更API路由內程式碼以及SQL_Function之內容
 ```
 
-
-
+```
 topic name = UserID
 message = {SenderID, ReceiverID, ChatID, MessageContent, TimeStamp}
+```
 
 # Connect DB directly
 
