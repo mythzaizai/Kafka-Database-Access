@@ -15,14 +15,14 @@ if not os.path.exists('database.db'):
 @app.route('/DB/Create_User', methods=['POST'])
 def create_user_route():
 
-
-
     UserInfo = request.json
+
+    print(UserInfo)
     create_user(UserInfo)
-
-
     
     return jsonify({"status": "User created successfully"}), 201
+
+
 
 @app.route('/DB/Update_User', methods=['POST'])
 def update_user_route():

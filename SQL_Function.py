@@ -2,11 +2,25 @@ import sqlite3
 
 # Create a new user with UserInfo
 def create_user(UserInfo):
-  conn = sqlite3.connect('database.db')
-  cursor = conn.cursor()
-  cursor.execute("INSERT INTO Users (UserID, UserName, Account, Password, Avatar, PersonalInfo, Status) VALUES (?, ?, ?, ?, ?, ?, ?)", UserInfo)
-  conn.commit()
-  conn.close()
+    # 轉換 UserInfo 字典為元組
+    user_tuple = (
+        UserInfo["UserID"],
+        UserInfo["UserName"],
+        UserInfo["Account"],
+        UserInfo["Password"],
+        UserInfo["Avatar"],
+        UserInfo["PersonalInfo"],
+        UserInfo["Status"]
+    )
+    
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    
+    # 執行插入操作
+    cursor.execute("INSERT INTO Users (UserID, UserName, Account, Password, Avatar, PersonalInfo, Status) VALUES (?, ?, ?, ?, ?, ?, ?)", user_tuple)
+    
+    conn.commit()
+    conn.close()
 
 # Update UserInfo based on UserID
 def update_user(UserInfo):
